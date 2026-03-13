@@ -27,7 +27,7 @@ float RoverGlobalCoordsX = 0; float RoverGlobalCoordsY = 0;
 float DesiredForwardSpeed = 0; // inch/sec
 float DesiredRotationSpeed = 0; // rad/sec
 float WheelDiameter = 3; // inch
-float WheelDistance = 12.65; // inch
+float WheelDistance = 13.2; // inch
 float RoverAccumulativeL = 0;
 float RoverStates[4] = {0}; // RoverGlobalCoordsX, RoverGlobalCoordsY, RoverGlobalDirection, RoverAccumulativeL (For Week 9 lab)
 #define pi PI
