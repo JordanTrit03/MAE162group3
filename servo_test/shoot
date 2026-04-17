@@ -1,0 +1,26 @@
+from gpiozero import Servo, Device
+from gpiozero.pins.pigpio import PiGPIOFactory
+from time import sleep
+
+Device.pin_factory = PiGPIOFactory()
+servo = Servo(18)
+
+def set_angle(servo, angle):
+    value = (angle / 90) - 1
+    servo.value = value
+
+def shoot(servo, forward_angle=120, rest_angle=90, delay=0.3):
+    set_angle(servo, forward_angle)
+    sleep(delay)
+    set_angle(servo, rest_angle)
+
+# Initialize at rest
+set_angle(servo, 90)
+sleep(1)
+
+# Fire multiple times
+for _ in range(3):
+    shoot(servo)
+    sleep(1)
+
+servo.detach()
